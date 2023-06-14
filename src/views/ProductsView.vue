@@ -1,17 +1,8 @@
 <template>
-  <div class="home">
-        <div class="splash-container">
-        <div class="splash">
-          <h1>Splendid Food</h1>
-        </div>
-      </div>
-        <main class="wrapper">
-    <h2>Recommended</h2>
-
-    <div class="recommended">
-      <!-- <div v-for="product in localInventory" :key="product.id" class="card"> -->
-      <div v-for="(product, index) in localInventory" :key="product.id" class="card">
-      <div v-if="index < 3">
+      <main class="wrapper">
+        <h1>Products</h1>
+            <div class="recommended">
+              <div v-for="product in localInventory" :key="product.id" class="card">
         <div class="card-title">
           {{ product.name }}
         </div>
@@ -52,17 +43,15 @@
           </button>
         </div>
       </div>
-      </div>
-    </div>
-  </main>
-        </div>
+            </div>
+
+      </main>
 </template>
 
 <script>
 export default {
-  components: {  },
-  name: 'HomeView',
-  props: ['inventory', 'addToCart'],
+  name: 'ProductsView',
+      props: ['inventory', 'addToCart'],
   data() {
     return {
       localInventory: [],
@@ -85,8 +74,6 @@ export default {
   },
   }
 }
-
-
 </script>
 
 <style scoped>
